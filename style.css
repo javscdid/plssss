@@ -1,0 +1,128 @@
+/* 🎨 VARIABEL WARNA GLOBAL */
+:root {
+  --bg-main: #0a0f0a;
+  --bg-secondary: #101e15;
+  --text-color: #e0ffe7;
+  --accent: #00ffcc;
+  --btn-bg: #004f4f;
+  --btn-hover: #00564d;
+  --shadow: rgba(0,255,204,0.2);
+}
+
+/* Tema gelap jika sistem user dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: #070a08;
+    --bg-secondary: #09100d;
+  }
+}
+
+/* RESET & BODY */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Rubik', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-color);
+  min-height: 100vh;
+  line-height: 1.6;
+  transition: background .3s, color .3s;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(to bottom, var(--bg-main), var(--bg-secondary));
+  text-align: center;
+  padding: 40px 20px;
+}
+header img {
+  max-width: 120px;
+  margin-bottom: 10px;
+  animation: floatLogo 3s ease-in-out infinite;
+}
+@keyframes floatLogo {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+header h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+header p {
+  font-size: 1.1rem;
+}
+
+/* BUTTONS & MENU */
+.menu-button,
+.download-btn {
+  background-color: var(--btn-bg);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background .3s;
+}
+.menu-button:hover,
+.download-btn:hover {
+  background-color: var(--btn-hover);
+}
+.download-btn {
+  background: linear-gradient(45deg, #4b6cb7, #182848);
+}
+
+/* SIDE MENU */
+.side-menu {
+  background-color: #001c1a;
+  padding: 2rem 1rem;
+}
+.side-menu a {
+  display: block;
+  padding: .75rem 1rem;
+  color: white;
+  background-color: #00332f;
+  border-radius: 8px;
+  margin: .3rem 0;
+  text-decoration: none;
+  transition: background .2s;
+}
+.side-menu a:hover {
+  background-color: var(--btn-hover);
+}
+
+/* BOXES */
+.box {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px var(--shadow);
+  transition: background .3s;
+}
+
+/* COPY BOX */
+.copy-box {
+  background: #0f1f14;
+  border: 2px dashed var(--accent);
+  padding: 10px;
+  border-radius: 8px;
+  font-family: monospace;
+  cursor: pointer;
+  transition: background .2s;
+}
+.copy-box:hover {
+  background: #152f20;
+}
+
+/* FOCUS & SELECTION */
+:focus-visible {
+  outline: 2px solid var(--accent);
+}
+::selection {
+  background: var(--accent);
+  color: var(--bg-main);
+}
